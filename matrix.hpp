@@ -19,4 +19,23 @@ class Matrix {
             } std::cout << std::endl;
         } std::cout << std::endl;
     }
+
+    Matrix dot(Matrix n) {
+        Matrix result(rows, n.cols);
+        
+        if(cols == n.rows) {
+            for(int i = 0; i < rows; i++) {
+                for(int j = 0; j < n.cols; j++) {
+                    float sum = 0;
+                    for(int k = 0; k < cols; k++) {
+                    sum += matrix[i][k]*n.matrix[k][j];
+                    }  
+                result.matrix[i][j] = sum;
+                }
+            } return result;
+        } else throw "error";
+        
+    }
+
+
 };
