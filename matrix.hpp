@@ -26,11 +26,9 @@ class Matrix {
         if(cols == n.rows) {
             for(int i = 0; i < rows; i++) {
                 for(int j = 0; j < n.cols; j++) {
-                    float sum = 0;
                     for(int k = 0; k < cols; k++) {
-                    sum += matrix[i][k]*n.matrix[k][j];
-                    }  
-                result.matrix[i][j] = sum;
+                    result.matrix[i][j] += matrix[i][k]*n.matrix[k][j];
+                    }
                 }
             } return result;
         } else throw "error";
